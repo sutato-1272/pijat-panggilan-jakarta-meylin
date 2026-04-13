@@ -44,14 +44,27 @@
             "longitude": 106.8327
           },
           "areaServed": [
-            "DKI Jakarta",
-            "Jakarta Selatan",
-            "Jakarta Pusat",
-            "Setiabudi",
-            "Kuningan",
-            "Sudirman",
-            "SCBD",
-            "Menteng"
+            "DKI Jakarta", "Jakarta Selatan", "Jakarta Pusat", "Setiabudi", "Kuningan", "Sudirman", "SCBD", "Menteng"
+          ],
+          "makesOffer": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pijat Tradisional & Lulur"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pijat Refleksi & Relaksasi"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hot Stone & Shiatsu"}}
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://pijat-panggilan-jakarta-meylin.vercel.app/#webpage",
+          "url": "https://pijat-panggilan-jakarta-meylin.vercel.app/",
+          "name": "Pijat Panggilan Jakarta 24 Jam Premium | Meylin Massage SPA",
+          "relatedLink": [
+             "https://sutato01.dongkrakbisnis.com/produk/900652/pijat-panggilan-setiabudi-kuningan-vip-hotel/",
+             "https://sutato01.dongkrakbisnis.com/produk/900658/ahli-pijat-panggilan-tebet-casablanca-bergaransi/",
+             "https://sutato01.dongkrakbisnis.com/produk/900662/pijat-panggilan-sudirman-premium-24-jam/",
+             "https://sutato01.dongkrakbisnis.com/produk/900710/jasa-pijat-shiatsu-refleksi-menteng/",
+             "https://sutato01.dongkrakbisnis.com/produk/900737/harga-pijat-panggilan-karet-tengsin-apartemen/",
+             "https://sutato01.dongkrakbisnis.com/produk/900678/booking-pijat-panggilan-jakarta-selatan-terapis-wanita/",
+             "https://sutato01.dongkrakbisnis.com/produk/900760/cara-mengatasi-badan-pegal-pijat-panggilan-jakarta/"
           ]
         },
         {
@@ -151,15 +164,14 @@
         @media (max-width:768px){
             .grid-2,.grid-3{grid-template-columns:1fr}
             .gallery-grid{grid-template-columns:repeat(2,1fr)}
-            
-            /* REVISI: Margin ditambahkan agar Hero Teks tidak menabrak Navbar di HP */
             .hero-content { margin-top: 100px; } 
             .hero h1 { font-size: 2rem; margin-bottom: 1rem; }
             .hero p { font-size: 1.05rem; }
             
             .mobile-float{position:fixed;bottom:0;left:0;width:100%;z-index:100;padding:1rem;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);border-top:1px solid var(--border);}
             .mobile-float .btn{width: 100%; padding: 1rem; font-size: 1rem;}
-            body { padding-bottom: 85px; }
+            /* PROTEKSI MOBILE FOOTER AGENCY: Padding 120px */
+            body { padding-bottom: 120px; }
         }
         
         .pulse{animation:pulse-glow 2s infinite}
@@ -275,80 +287,80 @@
             </div>
 
             <div class="grid grid-3">
-                <a href="https://wa.me/6281213412792?text=Halo%20Meylin,%20saya%20di%20area%20Setiabudi/Kuningan,%20butuh%20pijat." class="area-card">
+                <a href="https://sutato01.dongkrakbisnis.com/produk/900652/pijat-panggilan-setiabudi-kuningan-vip-hotel/" target="_blank" rel="noopener" class="area-card">
                     <img src="img/pijat-panggilan-setiabudi-kuningan-hotel.webp" alt="Pijat Panggilan Setiabudi Kuningan untuk Eksekutif Hotel" class="area-img" loading="lazy">
                     <div class="area-content">
                         <div>
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;">Setiabudi & Kuningan</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Solusi rileks paska meeting panjang.</p>
                         </div>
-                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 PANGGIL KE LOKASI ➔</span>
+                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 INFO SELENGKAPNYA ➔</span>
                     </div>
                 </a>
                 
-                <a href="https://wa.me/6281213412792?text=Halo%20Meylin,%20saya%20di%20area%20Tebet/Casablanca,%20butuh%20pijat." class="area-card">
+                <a href="https://sutato01.dongkrakbisnis.com/produk/900658/ahli-pijat-panggilan-tebet-casablanca-bergaransi/" target="_blank" rel="noopener" class="area-card">
                     <img src="img/ahli-pijat-panggilan-tebet-casablanca.webp" alt="Ahli Pijat Panggilan Tebet Casablanca Apartemen" class="area-img" loading="lazy">
                     <div class="area-content">
                         <div>
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;">Tebet & Casablanca</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Layanan cepat ke apartemen dan kos premium.</p>
                         </div>
-                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 PANGGIL KE LOKASI ➔</span>
+                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 INFO SELENGKAPNYA ➔</span>
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213412792?text=Halo%20Meylin,%20saya%20di%20area%20Sudirman/SCBD,%20butuh%20pijat." class="area-card">
+                <a href="https://sutato01.dongkrakbisnis.com/produk/900662/pijat-panggilan-sudirman-premium-24-jam/" target="_blank" rel="noopener" class="area-card">
                     <img src="img/spesialis-pijat-panggilan-sudirman-premium.webp" alt="Spesialis Pijat Panggilan Sudirman SCBD Premium 24 Jam" class="area-img" loading="lazy">
                     <div class="area-content">
                         <div>
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;">Sudirman & SCBD</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Terapis premium untuk eksekutif elite.</p>
                         </div>
-                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 PANGGIL KE LOKASI ➔</span>
+                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 INFO SELENGKAPNYA ➔</span>
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213412792?text=Halo%20Meylin,%20saya%20di%20area%20Menteng,%20butuh%20pijat." class="area-card">
+                <a href="https://sutato01.dongkrakbisnis.com/produk/900710/jasa-pijat-shiatsu-refleksi-menteng/" target="_blank" rel="noopener" class="area-card">
                     <img src="img/jasa-pijat-shiatsu-panggilan-menteng.webp" alt="Jasa Pijat Shiatsu Refleksi Panggilan Menteng VIP" class="area-img" loading="lazy">
                     <div class="area-content">
                         <div>
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;">Menteng VIP</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Perawatan hilangkan jetlag tamu hotel.</p>
                         </div>
-                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 PANGGIL KE LOKASI ➔</span>
+                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 INFO SELENGKAPNYA ➔</span>
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213412792?text=Halo%20Meylin,%20saya%20di%20area%20Karet%20Tengsin,%20butuh%20pijat." class="area-card">
+                <a href="https://sutato01.dongkrakbisnis.com/produk/900737/harga-pijat-panggilan-karet-tengsin-apartemen/" target="_blank" rel="noopener" class="area-card">
                     <img src="img/harga-pijat-panggilan-karet-tengsin-apartemen.webp" alt="Pijat Panggilan Karet Tengsin Apartemen Cepat Tanpa Antre" class="area-img" loading="lazy">
                     <div class="area-content">
                         <div>
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;">Karet Tengsin</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Kedatangan super kilat tanpa antre panjang.</p>
                         </div>
-                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 PANGGIL KE LOKASI ➔</span>
+                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 INFO SELENGKAPNYA ➔</span>
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213412792?text=Halo%20Meylin,%20saya%20di%20area%20Jakarta%20Selatan,%20butuh%20pijat." class="area-card">
+                <a href="https://sutato01.dongkrakbisnis.com/produk/900678/booking-pijat-panggilan-jakarta-selatan-terapis-wanita/" target="_blank" rel="noopener" class="area-card">
                     <img src="img/booking-pijat-panggilan-jakarta-selatan.webp" alt="Booking Pijat Panggilan Jakarta Selatan Private Residence" class="area-img" loading="lazy">
                     <div class="area-content">
                         <div>
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;">Jakarta Selatan (Umum)</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Layanan privasi tingkat tinggi untuk residensial.</p>
                         </div>
-                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 PANGGIL KE LOKASI ➔</span>
+                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 INFO SELENGKAPNYA ➔</span>
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213412792?text=Halo%20Meylin,%20saya%20pekerja%20kantoran%20butuh%20pijat%20pegal." class="area-card" style="grid-column: 1 / -1; max-width: 400px; margin: 0 auto;">
+                <a href="https://sutato01.dongkrakbisnis.com/produk/900760/cara-mengatasi-badan-pegal-pijat-panggilan-jakarta/" target="_blank" rel="noopener" class="area-card" style="grid-column: 1 / -1; max-width: 400px; margin: 0 auto;">
                     <img src="img/cara-mengatasi-badan-pegal-pekerja-kantoran.webp" alt="Cara Mengatasi Badan Pegal Pekerja Kantoran Relaksasi" class="area-img" loading="lazy">
                     <div class="area-content">
                         <div>
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;">Pekerja Kantoran / LBP</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Relaksasi tuntaskan pegal linu & sakit punggung.</p>
                         </div>
-                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 PANGGIL KE LOKASI ➔</span>
+                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">📍 INFO SELENGKAPNYA ➔</span>
                     </div>
                 </a>
             </div>
@@ -414,16 +426,17 @@
             
             <div style="width: 100%; max-width: 600px; height: 250px; margin: 0 auto 2rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                 <a href="https://maps.app.goo.gl/ufnpf9YZqKBdzKSr8?g_st=aw " target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%; text-decoration: none;">
-                    
                     <img src="img/lokasi-meylin-massage-spa-jakarta.jpg" alt="Peta Lokasi Meylin Massage SPA Pijat Panggilan Jakarta" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; filter: brightness(0.7);" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='brightness(0.9)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(0.7)';" loading="lazy" width="600" height="250">
-                    
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: var(--primary); padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; border: 1px solid var(--primary); pointer-events: none; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 1px; font-family: 'Plus Jakarta Sans', sans-serif;">
                         📍 Buka Google Maps
                     </div>
                 </a>
             </div>
 
-            <p style="color: #525252; font-size: 0.85rem;">© 2026 Meylin Massage SPA Jakarta. All Rights Reserved.</p>
+            <div class="text-center" style="margin-top: 2rem;">
+                <p style="color: #475569; font-size: 0.9rem; margin-bottom: 0.2rem;">© 2026 Meylin Massage SPA Jakarta. All Rights Reserved.</p>
+                <p style="color: #334155; font-size: 0.85rem; margin-bottom: 0;">SEO & Web Development by <a href="https://ciledugpromo.biz.id/" target="_blank" rel="noopener" style="color: #475569; text-decoration: none; font-weight: bold; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#475569'">CiledugPromo</a></p>
+            </div>
         </div>
     </footer>
 
