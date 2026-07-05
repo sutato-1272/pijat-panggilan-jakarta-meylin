@@ -177,6 +177,32 @@
         .pulse{animation:pulse-glow 2s infinite}
         @keyframes pulse-glow{0%,100%{box-shadow:0 0 0 0 rgba(22,163,74,0.6)}70%{box-shadow:0 0 0 15px rgba(22,163,74,0)}}
     </style>
+	<!-- ========================================== -->
+<!-- CSS KHUSUS AUDIBLE FAQ & ASISTEN AI JARVIS -->
+<!-- ========================================== -->
+<style>
+    /* Styling FAQ Suara */
+    .jarvis-faq-container { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; font-family: sans-serif; }
+    @media(min-width: 768px) { .jarvis-faq-container { grid-template-columns: 1fr 1fr; } }
+    .jarvis-faq-item { background: #1a1c23; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; display: flex; gap: 1.2rem; align-items: flex-start; color: #f1f1f1; }
+    .jarvis-faq-item h3 { font-size: 1.1rem; margin: 0 0 0.5rem 0; color: #ffffff; line-height: 1.4; }
+    .jarvis-faq-item p { font-size: 0.85rem; margin: 0; color: #a1a1aa; line-height: 1.5; }
+    
+    /* Tombol Suara (Pulse Effect) */
+    .voice-btn { flex-shrink: 0; background: transparent; border: 1px solid #06b6d4; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.3s; padding: 0; }
+    .voice-btn svg { fill: #06b6d4; width: 20px; height: 20px; transition: 0.3s; }
+    .voice-btn.playing { background: #06b6d4; animation: pulse-cyan 1.5s infinite; }
+    .voice-btn.playing svg { fill: #1a1c23; }
+    @keyframes pulse-cyan { 0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(6, 182, 212, 0); } 100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); } }
+
+    /* Styling AI Widget Melayang */
+    .jarvis-ai-trap { position: fixed; bottom: 25px; left: 25px; z-index: 9999; font-family: sans-serif; }
+    .cta-ai-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.3s; background: rgba(16, 17, 21, 0.95); backdrop-filter: blur(10px); border: 1px solid #06b6d4; box-shadow: 0 6px 25px rgba(6, 182, 212, 0.2); }
+    .cta-ai-btn:hover { transform: scale(1.12); }
+    .cta-ai-btn svg { fill: #06b6d4; width: 26px; height: 28px; }
+    
+    .jarvis-chat-box { display: none; position: absolute; bottom: 80px; left: 0; width: 320px; background: rgba(10, 11, 15, 0.98); border: 1px solid #06b6d4; border-radius: 12px; flex-direction: column; box-shadow: 0 12px 35px rgba(0,0,0,0.6); overflow: hidden; }
+</style>
 </head>
 <body>
 
@@ -252,7 +278,7 @@
 
             <div class="text-center">
                 <p style="color: #fff; font-size: 1.1rem; margin-bottom: 1.5rem;"><em>*Garansi ganti terapis dalam 15 menit pertama jika tekanan pijatan kurang pas di badan Anda.</em></p>
-                <a href="https://wa.me/6281213412792?text=Halo%20Meylin%20SPA,%20saya%20ingin%20konsultasi%20keluhan%20badan%20dan%20pilih%20layanan." class="btn btn-gold" style="max-width: 500px;">📲 KONSULTASIKAN KELUHAN BADANMU VIA WA DI SINI</a>
+                <a href="https://wa.me/6285283212205?text=Halo%20Meylin%20SPA,%20saya%20ingin%20konsultasi%20keluhan%20badan%20dan%20pilih%20layanan." class="btn btn-gold" style="max-width: 500px;">📲 KONSULTASIKAN KELUHAN BADANMU VIA WA DI SINI</a>
             </div>
         </div>
     </section>
@@ -377,7 +403,7 @@
                 <h2 class="mb-4" style="font-size: 2.5rem; color: var(--primary);">MARKAS MEYLIN SPA</h2>
                 <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                     
-                    <div style="margin-bottom: 2rem;">
+                    <div style="margin-bottom: 2rem;">`
                         <h3 style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; font-family: 'Plus Jakarta Sans', sans-serif;">📍 Basecamp / Titik Berangkat:</h3>
                         <p style="color: #fff; font-size: 1.15rem; line-height: 1.6; font-weight: 600;">
                             17, RT.16/RW.1, Menteng Atas,<br>
@@ -416,6 +442,31 @@
                     <div class="faq-content">Kami memberikan garansi ganti terapis dalam 15 menit pertama tanpa biaya tambahan jika Anda merasa tekanan atau teknik pijatan kurang sesuai dengan keluhan badan Anda.</div>
                 </details>
             </div>
+			<!-- ========================================== -->
+<!-- BLOK HTML: AUDIBLE FAQ                     -->
+<!-- ========================================== -->
+<div class="jarvis-faq-container">
+    <div class="jarvis-faq-item">
+        <button class="voice-btn" data-text="Biaya disesuaikan dengan tingkat kebutuhan masalah secara transparan. Hubungi admin kami sekarang untuk mendapatkan estimasi harga terbaik." aria-label="Putar Jawaban">
+            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+        <div>
+            <h3>Berapa estimasi biayanya?</h3>
+            <p>Harga transparan tanpa biaya siluman.</p>
+        </div>
+    </div>
+    
+    <div class="jarvis-faq-item">
+        <button class="voice-btn" data-text="Ya, kami memberikan garansi resmi untuk setiap pengerjaan demi memastikan kepuasan Anda." aria-label="Putar Jawaban">
+            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+        <div>
+            <h3>Apakah ada garansi pengerjaan?</h3>
+            <p>Bergaransi tertulis untuk keamanan Anda.</p>
+        </div>
+    </div>
+</div>
+<!-- *Catatan: Anda bisa menambah jumlah FAQ dengan men-copy blok <div class="jarvis-faq-item"> ke bawahnya dan mengedit teksnya. -->
         </div>
     </section>
 
@@ -443,6 +494,96 @@
     <div class="mobile-float md:hidden">
         <a href="https://wa.me/6281213412792?text=Halo%20Meylin,%20tolong%20kirim%20terapis%20ke%20lokasi%20saya%20sekarang." class="btn btn-wa pulse">🚨 PANGGIL TERAPIS KE KAMAR</a>
     </div>
+	<!-- ========================================== -->
+<!-- BLOK HTML: ASISTEN AI MELAYANG             -->
+<!-- ========================================== -->
+<div class="jarvis-ai-trap">
+    <div class="cta-ai-btn" id="jarvis-ai-trigger" title="Tanya Asisten AI">
+        <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 4h4v14H4V6h4v2h8V6zM8 10v2h8v-2H8zm0 4v2h8v-2H8z"/></svg>
+    </div>
+
+    <div class="jarvis-chat-box" id="jarvis-chat-interface">
+        <div style="background: #06b6d4; color: #07080a; padding: 12px 15px; font-weight: 700; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.9rem;">Asisten Konsultan AI</span>
+            <span id="jarvis-close-ai" style="cursor: pointer; font-size: 1.4rem; line-height: 1;">&times;</span>
+        </div>
+        <div id="jarvis-chat-history" style="height: 250px; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; scroll-behavior: smooth;">
+            <div style="background: rgba(255,255,255,0.06); color: #f1f1f1; padding: 10px 12px; border-radius: 8px 8px 8px 0; align-self: flex-start; max-width: 85%;">Halo! Ada pertanyaan seputar layanan kami yang bisa saya bantu jawab?</div>
+        </div>
+        <div style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 8px; background: rgba(0,0,0,0.3);">
+            <input type="text" id="jarvis-chat-input" placeholder="Ketik pesan di sini..." style="flex-grow: 1; padding: 8px 14px; border-radius: 20px; border: 1px solid rgba(6, 182, 212, 0.3); background: rgba(0,0,0,0.5); color: white; font-size: 0.85rem; outline: none;">
+            <button id="jarvis-send-chat" style="background: #06b6d4; color: #07080a; border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: bold; font-size: 0.75rem;">GO</button>
+        </div>
+    </div>
+</div>
+<!-- ========================================== -->
+<!-- SCRIPT JS: PENGGERAK VOICE & OTAK AI       -->
+<!-- ========================================== -->
+<script>
+    // 1. LOGIKA AUDIBLE FAQ (VOICE CLOSER)
+    const voiceSynth = window.speechSynthesis;
+    document.querySelectorAll('.voice-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelectorAll('.voice-btn').forEach(btn => btn.classList.remove('playing'));
+            if (voiceSynth.speaking) voiceSynth.cancel();
+            
+            const messagePayload = button.getAttribute('data-text');
+            const speechUtterance = new SpeechSynthesisUtterance(messagePayload);
+            speechUtterance.lang = 'id-ID';
+            speechUtterance.rate = 0.88;
+            speechUtterance.pitch = 0.82;
+            
+            button.classList.add('playing');
+            speechUtterance.onend = () => button.classList.remove('playing');
+            speechUtterance.onerror = () => button.classList.remove('playing');
+            voiceSynth.speak(speechUtterance);
+        });
+    });
+
+    // 2. LOGIKA OTAK ASISTEN AI (STATIC INTENT)
+    const chatTrigger = document.getElementById('jarvis-ai-trigger');
+    const chatBox = document.getElementById('jarvis-chat-interface');
+    const closeTrigger = document.getElementById('jarvis-close-ai');
+    
+    chatTrigger.addEventListener('click', () => { chatBox.style.display = chatBox.style.display === 'none' || chatBox.style.display === '' ? 'flex' : 'none'; });
+    closeTrigger.addEventListener('click', () => chatBox.style.display = 'none');
+
+    const chatInput = document.getElementById('jarvis-chat-input');
+    const sendBtn = document.getElementById('jarvis-send-chat');
+    const chatHistory = document.getElementById('jarvis-chat-history');
+
+    function processAiChat() {
+        const userText = chatInput.value.trim().toLowerCase();
+        if (!userText) return;
+        
+        chatHistory.innerHTML += `<div style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.35); color: #06b6d4; padding: 10px 12px; border-radius: 8px 8px 0 8px; align-self: flex-end; max-width: 85%; font-weight: 500;">${chatInput.value.trim()}</div>`;
+        chatInput.value = '';
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+        
+        const loadToken = 'loader-' + Date.now();
+        chatHistory.innerHTML += `<div id="${loadToken}" style="color: #a1a1aa; padding: 10px; font-style: italic; font-size: 0.8rem;">Mengetik jawaban...</div>`;
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+        
+        setTimeout(() => {
+            document.getElementById(loadToken).remove();
+            let aiResponse = "";
+            
+            // SILAKAN EDIT TEKS JAWABAN INI SESUAI LAYANAN KLIEN ANDA
+            if (userText.match(/harga|biaya|berapa/)) { aiResponse = `Biaya layanan kami sangat kompetitif dan transparan. Silakan hubungi admin kami via WhatsApp untuk detailnya!`; } 
+            else if (userText.match(/garansi|aman/)) { aiResponse = `Tentu, semua pekerjaan kami dilindungi garansi resmi.`; } 
+            else if (userText.match(/lokasi|dimana|area/)) { aiResponse = `Kami melayani area target spesifik yang ada di website ini. Tim kami siap meluncur!`; } 
+            else if (userText.match(/pesan|order|panggil/)) { aiResponse = `Siap! Silakan klik tombol WhatsApp di halaman ini untuk langsung terhubung dengan tim lapangan kami.`; } 
+            else { aiResponse = `Pertanyaan yang bagus. Untuk hal teknis spesifik, saya sarankan langsung berdiskusi dengan tim ahli kami melalui tombol WhatsApp yang tersedia.`; }
+            
+            chatHistory.innerHTML += `<div style="background: rgba(255,255,255,0.07); color: #f1f1f1; padding: 10px 12px; border-radius: 8px 8px 8px 0; align-self: flex-start; max-width: 85%; border-left: 3px solid #06b6d4; line-height: 1.5;">${aiResponse}</div>`;
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }, 600);
+    }
+
+    sendBtn.addEventListener('click', processAiChat);
+    chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') processAiChat(); });
+</script>
 
 </body>
 </html>
