@@ -182,26 +182,29 @@
 <!-- ========================================== -->
 <style>
     /* Styling FAQ Suara */
-    .jarvis-faq-container { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; font-family: sans-serif; }
+    .jarvis-faq-container { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; font-family: 'Plus Jakarta Sans', sans-serif; }
     @media(min-width: 768px) { .jarvis-faq-container { grid-template-columns: 1fr 1fr; } }
-    .jarvis-faq-item { background: #1a1c23; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; display: flex; gap: 1.2rem; align-items: flex-start; color: #f1f1f1; }
-    .jarvis-faq-item h3 { font-size: 1.1rem; margin: 0 0 0.5rem 0; color: #ffffff; line-height: 1.4; }
-    .jarvis-faq-item p { font-size: 0.85rem; margin: 0; color: #a1a1aa; line-height: 1.5; }
+    .jarvis-faq-item { background: #171717; padding: 1.5rem; border: 1px solid rgba(217, 119, 6, 0.2); border-radius: 12px; display: flex; gap: 1.2rem; align-items: flex-start; color: #f1f1f1; transition: 0.3s; }
+    .jarvis-faq-item:hover { border-color: rgba(217, 119, 6, 0.6); transform: translateY(-3px); }
+    .jarvis-faq-item h3 { font-size: 1.1rem; margin: 0 0 0.5rem 0; color: #ffffff; line-height: 1.4; font-family: 'Playfair Display', serif; }
+    .jarvis-faq-item p { font-size: 0.85rem; margin: 0; color: #a3a3a3; line-height: 1.5; }
     
-    /* Tombol Suara (Pulse Effect) */
-    .voice-btn { flex-shrink: 0; background: transparent; border: 1px solid #06b6d4; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.3s; padding: 0; }
-    .voice-btn svg { fill: #06b6d4; width: 20px; height: 20px; transition: 0.3s; }
-    .voice-btn.playing { background: #06b6d4; animation: pulse-cyan 1.5s infinite; }
-    .voice-btn.playing svg { fill: #1a1c23; }
-    @keyframes pulse-cyan { 0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(6, 182, 212, 0); } 100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); } }
+    /* Tombol Suara (Pulse Effect Gold) */
+    .voice-btn { flex-shrink: 0; background: transparent; border: 1px solid #d97706; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.3s; padding: 0; }
+    .voice-btn svg { fill: #d97706; width: 20px; height: 20px; transition: 0.3s; }
+    .voice-btn.playing { background: #d97706; animation: pulse-gold 1.5s infinite; }
+    .voice-btn.playing svg { fill: #171717; }
+    @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(217, 119, 6, 0); } 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); } }
 
-    /* Styling AI Widget Melayang */
-    .jarvis-ai-trap { position: fixed; bottom: 25px; left: 25px; z-index: 9999; font-family: sans-serif; }
-    .cta-ai-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.3s; background: rgba(16, 17, 21, 0.95); backdrop-filter: blur(10px); border: 1px solid #06b6d4; box-shadow: 0 6px 25px rgba(6, 182, 212, 0.2); }
-    .cta-ai-btn:hover { transform: scale(1.12); }
-    .cta-ai-btn svg { fill: #06b6d4; width: 26px; height: 28px; }
+    /* Styling AI Widget Melayang - Pindah ke KANAN BAWAH */
+    .jarvis-ai-trap { position: fixed; bottom: 85px; right: 20px; z-index: 9999; font-family: 'Plus Jakarta Sans', sans-serif; }
+    @media(min-width: 768px) { .jarvis-ai-trap { bottom: 25px; right: 25px; } } /* Desktop adjustment */
     
-    .jarvis-chat-box { display: none; position: absolute; bottom: 80px; left: 0; width: 320px; background: rgba(10, 11, 15, 0.98); border: 1px solid #06b6d4; border-radius: 12px; flex-direction: column; box-shadow: 0 12px 35px rgba(0,0,0,0.6); overflow: hidden; }
+    .cta-ai-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.3s; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); border: 2px solid #d97706; box-shadow: 0 6px 25px rgba(217, 119, 6, 0.3); }
+    .cta-ai-btn:hover { transform: scale(1.12); }
+    .cta-ai-btn svg { fill: #d97706; width: 26px; height: 28px; }
+    
+    .jarvis-chat-box { display: none; position: absolute; bottom: 80px; right: 0; width: 320px; background: rgba(15, 15, 15, 0.98); border: 1px solid #d97706; border-radius: 12px; flex-direction: column; box-shadow: 0 12px 35px rgba(0,0,0,0.8); overflow: hidden; }
 </style>
 </head>
 <body>
@@ -443,26 +446,56 @@
                 </details>
             </div>
 			<!-- ========================================== -->
-<!-- BLOK HTML: AUDIBLE FAQ                     -->
+<!-- BLOK HTML: AUDIBLE FAQ (MEYLIN SPA)        -->
 <!-- ========================================== -->
 <div class="jarvis-faq-container">
     <div class="jarvis-faq-item">
-        <button class="voice-btn" data-text="Biaya disesuaikan dengan tingkat kebutuhan masalah secara transparan. Hubungi admin kami sekarang untuk mendapatkan estimasi harga terbaik." aria-label="Putar Jawaban">
+        <button class="voice-btn" data-text="Kami sangat menghargai waktu Anda. Terapis kami akan tiba di hotel atau apartemen Anda dalam waktu tiga puluh hingga empat puluh lima menit khusus untuk area Ring Satu Jakarta. Hubungi admin kami sekarang untuk memanggil terapis." aria-label="Putar Jawaban">
             <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
         </button>
         <div>
-            <h3>Berapa estimasi biayanya?</h3>
-            <p>Harga transparan tanpa biaya siluman.</p>
+            <h3>Berapa lama terapis tiba?</h3>
+            <p>Estimasi tiba 30-45 menit ke lokasi Anda.</p>
         </div>
     </div>
     
     <div class="jarvis-faq-item">
-        <button class="voice-btn" data-text="Ya, kami memberikan garansi resmi untuk setiap pengerjaan demi memastikan kepuasan Anda." aria-label="Putar Jawaban">
+        <button class="voice-btn" data-text="Tarif layanan kami sangat kompetitif dan transparan, disesuaikan dengan durasi pijat yang Anda pilih. Dapatkan katalog harga lengkap dengan menekan tombol WhatsApp di layar Anda sekarang." aria-label="Putar Jawaban">
             <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
         </button>
         <div>
-            <h3>Apakah ada garansi pengerjaan?</h3>
-            <p>Bergaransi tertulis untuk keamanan Anda.</p>
+            <h3>Berapa tarif pijat panggilannya?</h3>
+            <p>Harga kompetitif untuk durasi 90-120 menit.</p>
+        </div>
+    </div>
+
+    <div class="jarvis-faq-item">
+        <button class="voice-btn" data-text="Tentu saja. Seluruh terapis kami adalah wanita muda bersertifikat profesional yang ahli dalam teknik relaksasi. Privasi Anda terjamin. Silakan pilih terapis favorit Anda melalui WhatsApp kami." aria-label="Putar Jawaban">
+            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+        <div>
+            <h3>Apakah terapisnya profesional?</h3>
+            <p>Terapis wanita bersertifikat dan sangat sopan.</p>
+        </div>
+    </div>
+
+    <div class="jarvis-faq-item">
+        <button class="voice-btn" data-text="Ya, kami beroperasi dua puluh empat jam penuh tanpa hari libur. Sangat cocok untuk mengobati kelelahan lembur atau jetlag penerbangan malam. Booking slot Anda sebelum penuh." aria-label="Putar Jawaban">
+            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+        <div>
+            <h3>Apakah melayani 24 Jam?</h3>
+            <p>Siap melayani kapan pun badan Anda butuh rileks.</p>
+        </div>
+    </div>
+
+    <div class="jarvis-faq-item">
+        <button class="voice-btn" data-text="Kepuasan Anda adalah prioritas kami. Jika tekanan pijatan terasa kurang pas, kami garansi ganti terapis dalam lima belas menit pertama tanpa biaya tambahan. Anda aman bersama kami." aria-label="Putar Jawaban">
+            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+        <div>
+            <h3>Adakah garansi kepuasan?</h3>
+            <p>Garansi ganti terapis di 15 menit pertama.</p>
         </div>
     </div>
 </div>
@@ -520,7 +553,7 @@
 <!-- SCRIPT JS: PENGGERAK VOICE & OTAK AI       -->
 <!-- ========================================== -->
 <script>
-    // 1. LOGIKA AUDIBLE FAQ (VOICE CLOSER)
+    // 1. LOGIKA AUDIBLE FAQ
     const voiceSynth = window.speechSynthesis;
     document.querySelectorAll('.voice-btn').forEach(button => {
         button.addEventListener('click', (e) => {
@@ -541,7 +574,7 @@
         });
     });
 
-    // 2. LOGIKA OTAK ASISTEN AI (STATIC INTENT)
+    // 2. LOGIKA OTAK ASISTEN AI (MEYLIN SPA)
     const chatTrigger = document.getElementById('jarvis-ai-trigger');
     const chatBox = document.getElementById('jarvis-chat-interface');
     const closeTrigger = document.getElementById('jarvis-close-ai');
@@ -553,32 +586,47 @@
     const sendBtn = document.getElementById('jarvis-send-chat');
     const chatHistory = document.getElementById('jarvis-chat-history');
 
+    // Ubah kalimat sapaan pertama
+    chatHistory.innerHTML = `<div style="background: rgba(255,255,255,0.06); color: #f1f1f1; padding: 10px 12px; border-radius: 8px 8px 8px 0; align-self: flex-start; max-width: 85%;">Halo Bapak/Ibu! Saya Asisten Virtual Meylin SPA. Ada yang bisa saya bantu terkait booking terapis atau layanan pijat kami?</div>`;
+
     function processAiChat() {
         const userText = chatInput.value.trim().toLowerCase();
         if (!userText) return;
         
-        chatHistory.innerHTML += `<div style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.35); color: #06b6d4; padding: 10px 12px; border-radius: 8px 8px 0 8px; align-self: flex-end; max-width: 85%; font-weight: 500;">${chatInput.value.trim()}</div>`;
+        chatHistory.innerHTML += `<div style="background: rgba(217, 119, 6, 0.15); border: 1px solid rgba(217, 119, 6, 0.35); color: #d97706; padding: 10px 12px; border-radius: 8px 8px 0 8px; align-self: flex-end; max-width: 85%; font-weight: 500;">${chatInput.value.trim()}</div>`;
         chatInput.value = '';
         chatHistory.scrollTop = chatHistory.scrollHeight;
         
         const loadToken = 'loader-' + Date.now();
-        chatHistory.innerHTML += `<div id="${loadToken}" style="color: #a1a1aa; padding: 10px; font-style: italic; font-size: 0.8rem;">Mengetik jawaban...</div>`;
+        chatHistory.innerHTML += `<div id="${loadToken}" style="color: #a3a3a3; padding: 10px; font-style: italic; font-size: 0.8rem;">Terapis sedang mengetik...</div>`;
         chatHistory.scrollTop = chatHistory.scrollHeight;
         
         setTimeout(() => {
             document.getElementById(loadToken).remove();
             let aiResponse = "";
             
-            // SILAKAN EDIT TEKS JAWABAN INI SESUAI LAYANAN KLIEN ANDA
-            if (userText.match(/harga|biaya|berapa/)) { aiResponse = `Biaya layanan kami sangat kompetitif dan transparan. Silakan hubungi admin kami via WhatsApp untuk detailnya!`; } 
-            else if (userText.match(/garansi|aman/)) { aiResponse = `Tentu, semua pekerjaan kami dilindungi garansi resmi.`; } 
-            else if (userText.match(/lokasi|dimana|area/)) { aiResponse = `Kami melayani area target spesifik yang ada di website ini. Tim kami siap meluncur!`; } 
-            else if (userText.match(/pesan|order|panggil/)) { aiResponse = `Siap! Silakan klik tombol WhatsApp di halaman ini untuk langsung terhubung dengan tim lapangan kami.`; } 
-            else { aiResponse = `Pertanyaan yang bagus. Untuk hal teknis spesifik, saya sarankan langsung berdiskusi dengan tim ahli kami melalui tombol WhatsApp yang tersedia.`; }
+            if (userText.match(/harga|biaya|tarif|berapa|pricelist/)) { 
+                aiResponse = `Tarif layanan pijat kami sangat transparan, Bapak/Ibu. Untuk melihat daftar harga lengkap sesuai durasi (90 atau 120 menit), silakan klik tombol WhatsApp ya, admin kami langsung kirimkan price list-nya.`; 
+            } 
+            else if (userText.match(/lokasi|hotel|apartemen|area|dimana/)) { 
+                aiResponse = `Terapis kami siap meluncur ke seluruh hotel, apartemen, dan kos premium di area Jakarta, khususnya Ring 1 (Sudirman, Kuningan, Menteng, Setiabudi). Posisi Bapak/Ibu di daerah mana sekarang?`; 
+            } 
+            else if (userText.match(/lama|waktu|jam|buka|kapan/)) { 
+                aiResponse = `Kami standby 24 jam nonstop! Terapis kami bisa tiba di lokasi Bapak/Ibu dalam 30-45 menit saja. Mau dibantu atur jadwal terapis sekarang?`; 
+            } 
+            else if (userText.match(/terapis|wanita|cewek|pijat|foto/)) { 
+                aiResponse = `Terapis kami semuanya wanita muda, sopan, dan bersertifikat profesional. Dijamin pijatannya mantap bikin rileks! Bapak/Ibu bisa pilih terapis langsung via WhatsApp kami.`; 
+            }
+            else if (userText.match(/pesan|order|booking|mau|panggil/)) { 
+                aiResponse = `Siap! Untuk fast response, silakan langsung klik tombol WhatsApp (atau tombol hijau) di halaman ini. Admin kami akan segera mengatur keberangkatan terapis ke kamar Bapak/Ibu.`; 
+            } 
+            else { 
+                aiResponse = `Pertanyaan yang menarik! Untuk memastikan Bapak/Ibu mendapat layanan terbaik, admin prioritas kami di WhatsApp siap merespons detailnya dalam hitungan detik. Silakan klik tombol WA untuk ngobrol langsung ya.`; 
+            }
             
-            chatHistory.innerHTML += `<div style="background: rgba(255,255,255,0.07); color: #f1f1f1; padding: 10px 12px; border-radius: 8px 8px 8px 0; align-self: flex-start; max-width: 85%; border-left: 3px solid #06b6d4; line-height: 1.5;">${aiResponse}</div>`;
+            chatHistory.innerHTML += `<div style="background: rgba(255,255,255,0.07); color: #f1f1f1; padding: 10px 12px; border-radius: 8px 8px 8px 0; align-self: flex-start; max-width: 85%; border-left: 3px solid #d97706; line-height: 1.5;">${aiResponse}</div>`;
             chatHistory.scrollTop = chatHistory.scrollHeight;
-        }, 600);
+        }, 800); // Waktu ketik diperlama sedikit agar terasa natural
     }
 
     sendBtn.addEventListener('click', processAiChat);
